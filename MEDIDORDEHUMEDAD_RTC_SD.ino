@@ -17,11 +17,6 @@ RtcDS1302<ThreeWire> Rtc(myWire);
 
 // ARCHIVO DONDE SE GUARDARÁ LA INFORMACIÓN EN LA SD
 File archivo;
-
-//Qué es reiniciar y volvera subir, entiendo que no se debe borrar nda 
-//Se repite el proceso para cada módulo
-// 1=true 0=false
-// , para cambiar de columna
 void setup() {
   Serial.begin(9600);
 
@@ -37,7 +32,7 @@ void setup() {
         Rtc.SetIsWriteProtected(false);
     }
 
-    // SOLO LA PRIMERA VEZ DESCOMENTADA Y LUEGO SE VUELVE A COMENTAR, SE SUBE EL PROGRAMA TWICE
+    // SOLO LA PRIMERA VEZ DESCOMENTADA Y LUEGO SE VUELVE A COMENTAR
     RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
     Rtc.SetDateTime(compiled);
 
